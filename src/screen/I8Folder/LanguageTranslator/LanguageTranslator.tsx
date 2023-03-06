@@ -1,5 +1,5 @@
 import moment from 'moment';
-import React, {useState} from 'react';
+import React, {FC, useState} from 'react';
 import {View, Text, SafeAreaView} from 'react-native';
 import {Image} from 'react-native-elements';
 import {useDispatch, useSelector} from 'react-redux';
@@ -13,7 +13,9 @@ import {
 import {toggle} from '../../../redux/Feature/languageSlice';
 import {styles} from './styles';
 
-const LanguageTranslator = () => {
+interface Props {}
+
+const LanguageTranslator: FC<Props> = () => {
   const {value, id} = useSelector((state: any) => state.languageSlice);
 
   const dispatch = useDispatch();
@@ -38,8 +40,8 @@ const LanguageTranslator = () => {
         <LanguageSelector
           placeholder={language}
           onChangeValue={text => {
-            setLanguage(text?.value);
-            dispatch(toggle(text?.id));
+            setLanguage(text.value);
+            dispatch(toggle(text.id));
           }}
           options={LANGUAGE_List}
         />

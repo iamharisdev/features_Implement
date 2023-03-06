@@ -8,7 +8,7 @@ interface Props {
   options?: any;
   placeholder?: string;
   value?: string;
-  onChangeValue: (value: string) => void | undefined;
+  onChangeValue: (value: {value: string; id: string}) => void | undefined;
   containerStyle?: any;
 }
 
