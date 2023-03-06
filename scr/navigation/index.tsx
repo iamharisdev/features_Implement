@@ -1,16 +1,20 @@
 import React, {FC} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Deals from '../screens/Deals/Deals';
+import Headlines from '../screens/Headlines/Headlines';
+import Details from '../screens/Deatails/Details';
+import LanguageSelection from '../screens/LanguageSelection/LanguageSelection';
 
 const Stack = createNativeStackNavigator();
 const MainNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Deals"
+        initialRouteName="Headlines"
         screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Deals" component={Deals} />
+        <Stack.Screen name="Headlines" component={Headlines} />
+        <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen name="LanguageSelection" component={LanguageSelection} />
       </Stack.Navigator>
     </NavigationContainer>
   );

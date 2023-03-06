@@ -1,22 +1,35 @@
 import React, {FC} from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
-import {appImages, WP} from '../../shared/exporter';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import {appImages, colors, size, WP} from '../../shared/exporter';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 interface Props {
-  myIcon: any;
+  isSearch: boolean;
+  isProfile: boolean;
+  onPress?: () => void;
 }
 
-const AppHeader: FC<Props> = () => {
-  const myIcon = <Icon name="rocket" size={30} color="#900" />;
-
+const AppHeader: FC<Props> = ({isProfile, isSearch, onPress}) => {
   return (
     <View style={styles.headerContainer}>
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <Image source={appImages.default} style={styles.imageStyle}></Image>
-        <Text style={styles.dateStyle}>AppHeader</Text>
-        <Icon name="rocket" size={30} color="#900" />
-      </View>
+      {isProfile ? (
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <Image source={appImages.default} style={styles.imageStyle}></Image>
+          <Text style={styles.dateStyle}>10 jan, 2021</Text>
+        </View>
+      ) : (
+        <TouchableOpacity style={styles.iconContainerStyle} onPress={onPress}>
+          <Icon name="arrow-back" size={20} />
+        </TouchableOpacity>
+      )}
+
+      <TouchableOpacity style={styles.iconContainerStyle}>
+        {isSearch ? (
+          <Icon name="search-outline" size={20} />
+        ) : (
+          <Icon name="share-social-outline" size={20} />
+        )}
+      </TouchableOpacity>
     </View>
   );
 };
@@ -32,11 +45,22 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   imageStyle: {
-    width: WP('12'),
-    height: WP('12'),
-    borderRadius: WP('6'),
+    width: WP('10'),
+    height: WP('10'),
+    borderRadius: WP('5'),
   },
   dateStyle: {
     marginHorizontal: WP('3'),
+    fontSize: size.xsmall,
+    color: colors.g12,
+  },
+  iconContainerStyle: {
+    width: WP('8'),
+    height: WP('8'),
+    borderRadius: WP('4'),
+    backgroundColor: colors.white,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
   },
 });
