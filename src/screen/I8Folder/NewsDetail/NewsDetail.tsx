@@ -25,7 +25,7 @@ const NewsDetail: FC<Props> = () => {
           }}
         />
         <View style={styles.contentContainer}>
-          <Image source={appImages.airlane} style={styles.imageStyle} />
+          <Image source={appImages.airline} style={styles.imageStyle} />
         </View>
         <Details />
       </ScrollView>

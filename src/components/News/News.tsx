@@ -14,7 +14,7 @@ const News: FC<Props> = ({onPress}) => {
 
   return (
     <TouchableOpacity style={styles.mainContainer} onPress={onPress}>
-      <Image source={appImages.airlane} style={styles.imageStyle} />
+      <Image source={appImages.airline} style={styles.imageStyle} />
       <View style={styles.contentContainer}>
         <Text style={styles.titleTextStyle}>{value.fights}</Text>
         <View style={styles.secondContentContainer}>

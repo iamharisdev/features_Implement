@@ -1,7 +1,7 @@
 export const appLogos = {};
 
 export const appImages = {
-  airlane: require('../../assets/image/airlane.jpg'),
+  airline: require('../../assets/image/airline.jpg'),
 };
 
 export const appIcons = {};

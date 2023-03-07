@@ -48,9 +48,9 @@ const LanguageTranslator: FC<Props> = () => {
       </View>
       <View style={styles.secondcontentContainer}>
         <Image
-          source={appImages.airlane}
+          source={appImages.airline}
           resizeMode={'cover'}
-          style={styles.airLaneStyle}
+          style={styles.airlineStyle}
         />
         <Text style={styles.subtitle}>{value.ContactLost}</Text>
         <View style={styles.contentFooterContainer}>

@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     width: WP('10'),
     borderRadius: WP('40'),
   },
-  airLaneStyle: {
+  airlineStyle: {
     height: WP('60'),
     width: WP('90'),
     borderRadius: WP('7'),
