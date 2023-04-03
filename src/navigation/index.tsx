@@ -4,11 +4,14 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LanguageTranslator from '../screen/I8Folder/LanguageTranslator';
 import NewsDetail from '../screen/I8Folder/NewsDetail';
 import ImageResizing from '../screen/ImageResize/ImageResizing/ImageResizing';
+import PaymentGoogle from '../screen/PaymentMethod/FrontEnd/GooglePay/GooglePay';
+import ApplePay from '../screen/PaymentMethod/FrontEnd/ApplePay/ApplePay';
 
 export type MainStackParamsList = {
   LanguageTranslator: undefined;
   NewsDetail: undefined;
   ImageResizing: undefined;
+  PaymentGoogle: undefined;
 };
 
 const Stack = createNativeStackNavigator<MainStackParamsList>();
@@ -25,6 +28,8 @@ function MainStack() {
         />
         <Stack.Screen name="NewsDetail" component={NewsDetail} />
         <Stack.Screen name="ImageResizing" component={ImageResizing} />
+        <Stack.Screen name="PaymentGoogle" component={PaymentGoogle} />
+        <Stack.Screen name="ApplePay" component={ApplePay} />
       </Stack.Navigator>
     </NavigationContainer>
   );
