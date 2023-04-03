@@ -12,6 +12,7 @@ export type MainStackParamsList = {
   NewsDetail: undefined;
   ImageResizing: undefined;
   PaymentGoogle: undefined;
+  ApplePay: undefined;
 };
 
 const Stack = createNativeStackNavigator<MainStackParamsList>();
